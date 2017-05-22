@@ -14,16 +14,8 @@ do {
 
 drop.get("/") { request in
 
-	var peak = try Peak(name: "TEST1")
-	try peak.save()
-
-
 	let peaks = [Peak(name: "Scarfell Pike")]
-
     let peaksNode = try peaks.makeNode()
-    
-    //let nodeDictionary = ["peaks": peaksNode]
-    
     return try JSON(node: peaksNode)
 
 }
